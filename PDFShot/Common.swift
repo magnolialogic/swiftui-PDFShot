@@ -1,6 +1,6 @@
 //
-//  DeviceModel.swift
-//  Shareshot
+//  Common.swift
+//  PDFShot
 //
 //  Created by Chris Coffin on 1/4/21.
 //
@@ -8,11 +8,7 @@
 import SwiftUI
 
 public enum Model : String {
-	
-	//Simulator
 	case simulator     = "simulator/sandbox",
-		 
-		 //iPod
 		 iPod1              = "iPod 1",
 		 iPod2              = "iPod 2",
 		 iPod3              = "iPod 3",
@@ -21,7 +17,6 @@ public enum Model : String {
 		 iPod6              = "iPod 6",
 		 iPod7              = "iPod 7",
 		 
-		 //iPad
 		 iPad2              = "iPad 2",
 		 iPad3              = "iPad 3",
 		 iPad4              = "iPad 4",
@@ -29,19 +24,17 @@ public enum Model : String {
 		 iPadAir2           = "iPad Air 2",
 		 iPadAir3           = "iPad Air 3",
 		 iPadAir4           = "iPad Air 4",
-		 iPad5              = "iPad 5", //iPad 2017
-		 iPad6              = "iPad 6", //iPad 2018
-		 iPad7              = "iPad 7", //iPad 2019
-		 iPad8              = "iPad 8", //iPad 2020
+		 iPad5              = "iPad 5",
+		 iPad6              = "iPad 6",
+		 iPad7              = "iPad 7",
+		 iPad8              = "iPad 8",
 		 
-		 //iPad Mini
 		 iPadMini           = "iPad Mini",
 		 iPadMini2          = "iPad Mini 2",
 		 iPadMini3          = "iPad Mini 3",
 		 iPadMini4          = "iPad Mini 4",
 		 iPadMini5          = "iPad Mini 5",
 		 
-		 //iPad Pro
 		 iPadPro9_7         = "iPad Pro 9.7\"",
 		 iPadPro10_5        = "iPad Pro 10.5\"",
 		 iPadPro11          = "iPad Pro 11\"",
@@ -51,7 +44,6 @@ public enum Model : String {
 		 iPadPro3_12_9      = "iPad Pro 3 12.9\"",
 		 iPadPro4_12_9      = "iPad Pro 4 12.9\"",
 		 
-		 //iPhone
 		 iPhone4            = "iPhone 4",
 		 iPhone4S           = "iPhone 4S",
 		 iPhone5            = "iPhone 5",
@@ -79,7 +71,6 @@ public enum Model : String {
 		 iPhone12Pro        = "iPhone 12 Pro",
 		 iPhone12ProMax     = "iPhone 12 Pro Max",
 		 
-		 // Apple Watch
 		 AppleWatch1         = "Apple Watch 1gen",
 		 AppleWatchS1        = "Apple Watch Series 1",
 		 AppleWatchS2        = "Apple Watch Series 2",
@@ -89,7 +80,6 @@ public enum Model : String {
 		 AppleWatchSE        = "Apple Watch Special Edition",
 		 AppleWatchS6        = "Apple Watch Series 6",
 		 
-		 //Apple TV
 		 AppleTV1           = "Apple TV 1gen",
 		 AppleTV2           = "Apple TV 2gen",
 		 AppleTV3           = "Apple TV 3gen",
@@ -99,12 +89,7 @@ public enum Model : String {
 		 unrecognized       = "?unrecognized?"
 }
 
-// #-#-#-#-#-#-#-#-#-#-#-#-#
-// MARK: UIDevice extensions
-// #-#-#-#-#-#-#-#-#-#-#-#-#
-
 public extension UIDevice {
-	
 	var type: Model {
 		var systemInfo = utsname()
 		uname(&systemInfo)
@@ -115,12 +100,9 @@ public extension UIDevice {
 		}
 		
 		let modelMap : [String: Model] = [
-			
-			//Simulator
 			"i386"      : .simulator,
 			"x86_64"    : .simulator,
 			
-			//iPod
 			"iPod1,1"   : .iPod1,
 			"iPod2,1"   : .iPod2,
 			"iPod3,1"   : .iPod3,
@@ -129,7 +111,6 @@ public extension UIDevice {
 			"iPod7,1"   : .iPod6,
 			"iPod9,1"   : .iPod7,
 			
-			//iPad
 			"iPad2,1"   : .iPad2,
 			"iPad2,2"   : .iPad2,
 			"iPad2,3"   : .iPad2,
@@ -140,16 +121,15 @@ public extension UIDevice {
 			"iPad3,4"   : .iPad4,
 			"iPad3,5"   : .iPad4,
 			"iPad3,6"   : .iPad4,
-			"iPad6,11"  : .iPad5, //iPad 2017
+			"iPad6,11"  : .iPad5,
 			"iPad6,12"  : .iPad5,
-			"iPad7,5"   : .iPad6, //iPad 2018
+			"iPad7,5"   : .iPad6,
 			"iPad7,6"   : .iPad6,
-			"iPad7,11"  : .iPad7, //iPad 2019
+			"iPad7,11"  : .iPad7,
 			"iPad7,12"  : .iPad7,
-			"iPad11,6"  : .iPad8, //iPad 2020
+			"iPad11,6"  : .iPad8,
 			"iPad11,7"  : .iPad8,
 			
-			//iPad Mini
 			"iPad2,5"   : .iPadMini,
 			"iPad2,6"   : .iPadMini,
 			"iPad2,7"   : .iPadMini,
@@ -164,7 +144,6 @@ public extension UIDevice {
 			"iPad11,1"  : .iPadMini5,
 			"iPad11,2"  : .iPadMini5,
 			
-			//iPad Pro
 			"iPad6,3"   : .iPadPro9_7,
 			"iPad6,4"   : .iPadPro9_7,
 			"iPad7,3"   : .iPadPro10_5,
@@ -186,7 +165,6 @@ public extension UIDevice {
 			"iPad8,11"  : .iPadPro4_12_9,
 			"iPad8,12"  : .iPadPro4_12_9,
 			
-			//iPad Air
 			"iPad4,1"   : .iPadAir,
 			"iPad4,2"   : .iPadAir,
 			"iPad4,3"   : .iPadAir,
@@ -198,7 +176,6 @@ public extension UIDevice {
 			"iPad13,2"  : .iPadAir4,
 			
 			
-			//iPhone
 			"iPhone3,1" : .iPhone4,
 			"iPhone3,2" : .iPhone4,
 			"iPhone3,3" : .iPhone4,
@@ -237,7 +214,6 @@ public extension UIDevice {
 			"iPhone13,3" : .iPhone12Pro,
 			"iPhone13,4" : .iPhone12ProMax,
 			
-			// Apple Watch
 			"Watch1,1" : .AppleWatch1,
 			"Watch1,2" : .AppleWatch1,
 			"Watch2,6" : .AppleWatchS1,
@@ -265,7 +241,6 @@ public extension UIDevice {
 			"Watch6,3" : .AppleWatchS6,
 			"Watch6,4" : .AppleWatchS6,
 			
-			//Apple TV
 			"AppleTV1,1" : .AppleTV1,
 			"AppleTV2,1" : .AppleTV2,
 			"AppleTV3,1" : .AppleTV3,
@@ -285,5 +260,33 @@ public extension UIDevice {
 			return model
 		}
 		return Model.unrecognized
+	}
+}
+
+extension UIImage {
+	func scalePreservingAspectRatio(target: Int) -> UIImage {
+		let targetSize = CGSize(width: target, height: target)
+		
+		let widthRatio = targetSize.width / size.width
+		let heightRatio = targetSize.height / size.height
+		let scaleFactor = min(widthRatio, heightRatio)
+		
+		let scaledImageSize = CGSize(
+			width: size.width * scaleFactor,
+			height: size.height * scaleFactor
+		)
+		
+		let renderer = UIGraphicsImageRenderer(
+			size: scaledImageSize
+		)
+		
+		let scaledImage = renderer.image { _ in
+			self.draw(in: CGRect(
+				origin: .zero,
+				size: scaledImageSize
+			))
+		}
+		
+		return scaledImage
 	}
 }
