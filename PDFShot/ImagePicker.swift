@@ -1,6 +1,6 @@
 //
 //  ImagePicker.swift
-//  Shareshot
+//  PDFShot
 //
 //  Created by Chris Coffin on 12/17/20.
 //

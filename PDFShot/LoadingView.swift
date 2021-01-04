@@ -1,9 +1,8 @@
 //
 //  LoadingView.swift
-//  Shareshot
+//  PDFShot
 //
 //  Created by Chris Coffin on 12/21/20.
-//  https://roddy.io/2020/07/27/create-progressview-modal-in-swiftui/
 //
 
 import SwiftUI
